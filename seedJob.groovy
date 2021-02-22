@@ -5,7 +5,7 @@ String jobsDefinition = 'jobs.json'
 def jobs = new JsonSlurper().parseText(readFileFromWorkspace(jobsDefinition))
 
 for (job in jobs){
-  def publishJson = ew JsonSlurper("""
+  def publishJson = new JsonSlurper("""
     {
       "DockerHubRelease": {
         "repositoryName": "wolfsea89/${job.docker.name}",
