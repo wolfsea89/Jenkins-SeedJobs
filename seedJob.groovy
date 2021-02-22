@@ -66,16 +66,22 @@ for (job in jobs){
   }
 }
 
-categorizedJobsView('example') {
-    jobs {
-        regex(/configuration_.*/)
-    }
-    categorizationCriteria {
-        regexGroupingRule(/^configuration_([^_]+).*$/)
-    }
-    columns {
-        status()
-        categorizedJob()
-        buildButton()
+nestedView('project-a') {
+    views {
+        listView('overview') {
+            jobs {
+                regex(/project-A-.*/)
+            }
+            columns {
+                status()
+                weather()
+                name()
+                lastSuccess()
+                lastFailure()
+            }
+        }
+        buildPipelineView('pipeline') {
+            selectedJob('project-a-compile')
+        }
     }
 }
