@@ -24,7 +24,8 @@ for (job in jobs){
       }
     }
     """)
-  println(publishJson)
+  def test = JsonOutput.toJson(publishJson)
+  println(test)
   
   pipelineJob(job.name) {
     parameters{
