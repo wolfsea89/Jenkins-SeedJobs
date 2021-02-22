@@ -67,12 +67,14 @@ for (job in jobs){
 }
 
 listView('Build') {
-  jobFilters {
-    regex {
-      regex(/^Build-.*?$/)
-    }
+  // jobFilters {
+  //   regex {
+  //     regex(/^Build-.*?$/)
+  //   }
+  // }
+  jobs {
+    regex('/^Build-.*?$/')
   }
-  
   columns {
     status()
     weather()
