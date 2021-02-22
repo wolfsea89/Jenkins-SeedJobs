@@ -27,7 +27,7 @@ for (job in jobs){
   
   pipelineJob(job.name) {
     parameters{
-      stringParam("branch", job.defaultBranch, 'Branch name')
+      stringParam("branchName", job.defaultBranch, 'Branch name')
       stringParam("repositoryUrl", job.repositoryUrl, 'Repository URL (git/https)')
       stringParam("manualVersion", "", 'Set manual version (X.Y.Z). Worked with branch release, hotfix, master without version')
     }
