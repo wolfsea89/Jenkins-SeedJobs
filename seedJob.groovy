@@ -75,13 +75,20 @@ listView('Build') {
   // jobs {
   //   // regex('^Build-.*?$')
   // }
-  columns {
-    status()
-    weather()
-    name()
-    lastSuccess()
-    lastFailure()
-    lastDuration()
-    buildButton()
-  }
+    columns {
+        status()
+        weather()
+        name()
+        lastSuccess()
+        lastFailure()
+        lastDuration()
+        buildButton()
+        lastBuildConsole()
+        configureProject()
+        claim()
+        lastBuildNode()
+        categorizedJob()
+        robotResults()
+        customIcon()
+    }
 }
