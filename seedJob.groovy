@@ -67,9 +67,9 @@ for (job in jobs){
 }
 
 listView('Build') {
-      jobs {
-        regex(/^Build-.*?$/)
-    }
+    // jobs {
+    //     regex(/^Build-.*?$/)
+    // }
     columns {
         status()
         weather()
