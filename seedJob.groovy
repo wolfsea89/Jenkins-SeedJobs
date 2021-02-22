@@ -66,13 +66,10 @@ for (job in jobs){
   }
 }
 
-buildPipelineView('project-A') {
-    filterBuildQueue()
-    filterExecutors()
-    title('Project A CI Pipeline')
-    displayedBuilds(5)
-    selectedJob('project-A-compile')
-    alwaysAllowManualTrigger()
-    showPipelineParameters()
-    refreshFrequency(60)
+buildMonitorView('project-A') {
+    description('All jobs for project A')
+    jobs {
+        name('release-projectA')
+        regex(/project-A-.+/)
+    }
 }
