@@ -73,7 +73,7 @@ listView('Build') {
   //   }
   // }
   jobs {
-    regex('/^Build-.*?$/')
+    regex('^Build-.*?$')
   }
   columns {
     status()
