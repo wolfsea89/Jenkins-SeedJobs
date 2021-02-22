@@ -71,7 +71,7 @@ listView('Build') {
   filterBuildQueue()
   filterExecutors()
   jobs {
-      regex(/Build-*?/)
+      // regex(/Build-*?/)
   }
   columns {
       status()
