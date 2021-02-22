@@ -24,8 +24,6 @@ for (job in jobs){
       }
     }
     """)
-  def test = JsonOutput.toJson(publishJson)
-  println(test)
   
   pipelineJob(job.name) {
     parameters{
@@ -38,7 +36,7 @@ for (job in jobs){
       env('GIT_CREDS_ID', 'github')
       env('APP_CONFIGURATION_JSON_PATH', 'configuration/jenkins.json')
       env('BASEIMAGE_SERVICES_ADMIN_CREDS_ID', 'baseImage_services_AminPassword')
-      env('PUBLISH_REPOSITORIES', '')
+      env('PUBLISH_REPOSITORIES', JsonOutput.toJson(publishJson))
     }
     definition {
       cpsScm{
@@ -65,8 +63,3 @@ for (job in jobs){
     }
   }
 }
- 
-// def jsonSlurper = new JsonSlurper()
-// data = jsonSlurper.parse(new File("jobs.json"))
-// println(data)
-// println ("WSK")
