@@ -66,10 +66,16 @@ for (job in jobs){
   }
 }
 
-buildMonitorView('project-A') {
-    description('All jobs for project A')
+categorizedJobsView('example') {
     jobs {
-        name('release-projectA')
-        regex(/project-A-.+/)
+        regex(/configuration_.*/)
+    }
+    categorizationCriteria {
+        regexGroupingRule(/^configuration_([^_]+).*$/)
+    }
+    columns {
+        status()
+        categorizedJob()
+        buildButton()
     }
 }
