@@ -66,22 +66,14 @@ for (job in jobs){
   }
 }
 
-nestedView('project-a') {
-    views {
-        listView('overview') {
-            jobs {
-                regex(/project-A-.*/)
-            }
-            columns {
-                status()
-                weather()
-                name()
-                lastSuccess()
-                lastFailure()
-            }
-        }
-        buildPipelineView('pipeline') {
-            selectedJob('project-a-compile')
-        }
+listView('project-A') {
+    columns {
+        status()
+        weather()
+        name()
+        lastSuccess()
+        lastFailure()
+        lastDuration()
+        buildButton()
     }
 }
