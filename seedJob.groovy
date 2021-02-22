@@ -65,3 +65,21 @@ for (job in jobs){
     }
   }
 }
+
+listView('Build') {
+  description('Build')
+  filterBuildQueue()
+  filterExecutors()
+  jobs {
+      regex(/Build-*?/)
+  }
+  columns {
+      status()
+      weather()
+      name()
+      lastSuccess()
+      lastFailure()
+      lastDuration()
+      buildButton()
+  }
+}
