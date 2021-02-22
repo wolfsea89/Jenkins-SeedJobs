@@ -72,9 +72,9 @@ listView('Build') {
   //     regex(/^Build-.*?$/)
   //   }
   // }
-  jobs {
-    // regex('^Build-.*?$')
-  }
+  // jobs {
+  //   // regex('^Build-.*?$')
+  // }
   columns {
     status()
     weather()
