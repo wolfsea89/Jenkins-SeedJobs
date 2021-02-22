@@ -66,7 +66,10 @@ for (job in jobs){
   }
 }
 
-listView('project-A') {
+listView('Build') {
+      jobs {
+        regex(/^Build-.*?$/)
+    }
     columns {
         status()
         weather()
