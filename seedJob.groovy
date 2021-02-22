@@ -72,19 +72,17 @@ listView('Build') {
   //     regex(/^Build-.*?$/)
   //   }
   // }
-  // jobs {
-  //   // regex('^Build-.*?$')
-  // }
-    columns {
-        status()
-        weather()
-        name()
-        lastSuccess()
-        lastFailure()
-        lastDuration()
-        buildButton()
-        lastBuildConsole()
-        configureProject()
-        lastBuildNode()
-    }
+  jobs {
+    name("")
+    regex('^Build-.*?$')
+  }
+  columns {
+    status()
+    weather()
+    name()
+    lastSuccess()
+    lastFailure()
+    lastDuration()
+    buildButton()
+  }
 }
