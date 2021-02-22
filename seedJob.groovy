@@ -66,31 +66,13 @@ for (job in jobs){
   }
 }
 
-dashboardView('example') {
-    jobs {
-        regex(/acme-.*/)
-    }
-    columns {
-        status()
-        weather()
-        buildButton()
-    }
-    topPortlets {
-        jenkinsJobsList {
-            displayName('acme jobs')
-        }
-    }
-    leftPortlets {
-        testStatisticsChart()
-    }
-    rightPortlets {
-        testTrendChart()
-    }
-    bottomPortlets {
-        iframe {
-            effectiveUrl('http://example.com')
-        }
-        testStatisticsGrid()
-        buildStatistics()
-    }
+buildPipelineView('project-A') {
+    filterBuildQueue()
+    filterExecutors()
+    title('Project A CI Pipeline')
+    displayedBuilds(5)
+    selectedJob('project-A-compile')
+    alwaysAllowManualTrigger()
+    showPipelineParameters()
+    refreshFrequency(60)
 }
