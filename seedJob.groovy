@@ -85,10 +85,6 @@ listView('Build') {
         buildButton()
         lastBuildConsole()
         configureProject()
-        claim()
         lastBuildNode()
-        categorizedJob()
-        robotResults()
-        customIcon()
     }
 }
