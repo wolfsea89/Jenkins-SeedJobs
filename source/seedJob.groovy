@@ -3,6 +3,10 @@ def seedJobs = [
   'source/view/dockerBuilder.groovy'
 ]
 
+String targetsSeedJobs
+for (item in seedJobs){
+  targetsSeedJobs += item + ' '
+}
 job('seedJob'){
   displayName('seedJob')
   description('Create jobs')
@@ -18,9 +22,7 @@ job('seedJob'){
   steps {
     jobDsl {
       targets(
-        for (item in seedJobs){
-          "$item "
-        }
+     
       )
     }
   }
