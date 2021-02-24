@@ -6,9 +6,9 @@ def seedJobs = [
 String targetsSeedJobs
 for (item in seedJobs){
   if(targetsSeedJobs == ""){
-    targetsSeedJobs = item + ' '
+    targetsSeedJobs = item + '\n'
   } else {
-    targetsSeedJobs += item + ' '
+    targetsSeedJobs += item + '\n'
   }
 }
 job('seedJob'){
