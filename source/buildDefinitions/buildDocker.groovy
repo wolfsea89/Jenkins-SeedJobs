@@ -1,6 +1,6 @@
 import groovy.json.*
 
-String jobsDefinition = 'Definitions/jobs.json'
+String jobsDefinition = 'configuration/jobs.json'
 
 def jobsList = new JsonSlurper().parseText(readFileFromWorkspace(jobsDefinition))
 
