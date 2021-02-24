@@ -22,7 +22,7 @@ job('seedJob'){
         url('git@github.com:wolfsea89/Jenkins-SeedJobs.git')
         credentials('github')
       }
-      branch('feature/create_seedjob')
+      branch('master')
     }
   }
   steps {
