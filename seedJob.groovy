@@ -1,5 +1,3 @@
-import groovy.json.*
-
 job('seedJob'){
   displayName('Create jobs')
   definition {
@@ -23,20 +21,5 @@ job('seedJob'){
           ignoreExisting()
           additionalClasspath('lib')
       }
-  }
-}
-
-listView('Build') {
-  jobs {
-    regex('^Build-.*?$')
-  }
-  columns {
-    status()
-    weather()
-    name()
-    lastSuccess()
-    lastFailure()
-    lastDuration()
-    buildButton()
   }
 }
