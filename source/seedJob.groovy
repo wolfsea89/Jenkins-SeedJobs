@@ -21,9 +21,7 @@ job('seedJob'){
   }
   steps {
     jobDsl {
-      targets(
-     
-      )
+      targets(targetsSeedJobs)
     }
   }
 }
