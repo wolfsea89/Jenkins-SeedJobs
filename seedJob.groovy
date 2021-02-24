@@ -2,34 +2,34 @@ import groovy.json.*
 
 String jobsDefinition = 'Definitions/jobs.json'
 
-def jobs = new JsonSlurper().parseText(readFileFromWorkspace(jobsDefinition))
+def jobsList = new JsonSlurper().parseText(readFileFromWorkspace(jobsDefinition))
 
-for (job in jobs){
-  if(job.jobType == "Build"){
+for (jobItem in jobsList){
+  if(jobItem.jobType == "Build"){
         def publishJson = new JsonSlurper().parseText("""
       {
         "DockerHubRelease": {
-          "repositoryName": "wolfsea89/${job.docker.name}",
+          "repositoryName": "wolfsea89/${jobItem.docker.name}",
           "repositoryCredentialID": "docker_hub",
           "repositoryUrl": "https://index.docker.io/v1/"
         },
         "DockerHubSnapshot": {
-          "repositoryName": "wolfsea89/${job.docker.name}-snapshot",
+          "repositoryName": "wolfsea89/${jobItem.docker.name}-snapshot",
           "repositoryCredentialID": "docker_hub",
           "repositoryUrl": "https://index.docker.io/v1/"
         },
         "GitHubRelease": {
-          "repositoryName": "docker.pkg.github.com/wolfsea89/jenkins-baseimage/${job.docker.name}",
+          "repositoryName": "docker.pkg.github.com/wolfsea89/jenkins-baseimage/${jobItem.docker.name}",
           "repositoryCredentialID": "github",
           "repositoryUrl": "https://docker.pkg.github.com/"
         }
       }
       """)
 
-    pipelineJob(job.name) {
+    pipelineJob(jobItem.name) {
       parameters{
-        stringParam("branchName", job.defaultBranch, 'Branch name')
-        stringParam("repositoryUrl", job.repositoryUrl, 'Repository URL (git/https)')
+        stringParam("branchName", jobItem.defaultBranch, 'Branch name')
+        stringParam("repositoryUrl", jobItem.repositoryUrl, 'Repository URL (git/https)')
         stringParam("manualVersion", "", 'Set manual version (X.Y.Z). Worked with branch release, hotfix, master without version')
       }
       environmentVariables {
