@@ -4,15 +4,15 @@ job('seedJob'){
   scm {
     git {
       remote {
-          url('git@github.com:wolfsea89/Jenkins-SeedJobs.git')
-          credentials('github')
+        url('git@github.com:wolfsea89/Jenkins-SeedJobs.git')
+        credentials('github')
       }
       branch('feature/seedjob')
     }
   }
   steps {
-      jobDsl {
-          targets('seedJob.groovy')
-      }
+    jobDsl {
+      targets('seedJob.groovy')
+    }
   }
 }
