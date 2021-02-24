@@ -1,3 +1,8 @@
+def seedJobs = [
+  'source/seedJob.groovy',
+  'source/view/dockerBuilder.groovy'
+]
+
 job('seedJob'){
   displayName('seedJob')
   description('Create jobs')
@@ -12,10 +17,11 @@ job('seedJob'){
   }
   steps {
     jobDsl {
-      targets("""
-      source/seedJob.groovy
-      source/view/dockerBuilder.groovy
-      """)
+      targets(
+        for (item in seedJobs){
+          "$item "
+        }
+      )
     }
   }
 }
