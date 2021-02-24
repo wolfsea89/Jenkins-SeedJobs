@@ -14,8 +14,8 @@ job('seedJob'){
     }
   }
   steps {
-      dsl {
-          external('seedJob.groovy', 'projectB.groovy')
+      jobDsl {
+          targets('seedJob.groovy')
       }
   }
 }
