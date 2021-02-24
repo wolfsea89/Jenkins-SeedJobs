@@ -5,7 +5,7 @@ String jobsDefinition = 'Definitions/jobs.json'
 def jobsList = new JsonSlurper().parseText(readFileFromWorkspace(jobsDefinition))
 
 for (jobItem in jobsList){
-  if(jobItem.jobType == "Build"){
+  if(jobItem.jobType == "BuildDocker"){
         def publishJson = new JsonSlurper().parseText("""
       {
         "DockerHubRelease": {
@@ -63,20 +63,5 @@ for (jobItem in jobsList){
         }
       }
     }
-  }
-}
-
-listView('Build') {
-  jobs {
-    regex('^Build-.*?$')
-  }
-  columns {
-    status()
-    weather()
-    name()
-    lastSuccess()
-    lastFailure()
-    lastDuration()
-    buildButton()
   }
 }

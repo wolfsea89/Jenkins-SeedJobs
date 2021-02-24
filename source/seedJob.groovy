@@ -11,6 +11,7 @@ for (item in seedJobs){
     targetsSeedJobs += item + '\n'
   }
 }
+
 job('seedJob'){
   displayName('seedJob')
   description('Create jobs')
