@@ -67,11 +67,6 @@ for (jobItem in jobsList){
 }
 
 listView('Build') {
-  // jobFilters {
-  //   regex {
-  //     regex(/^Build-.*?$/)
-  //   }
-  // }
   jobs {
     regex('^Build-.*?$')
   }
