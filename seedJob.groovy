@@ -16,7 +16,6 @@ job('seedJob'){
   steps {
       dsl {
           external('seedJob.groovy', 'projectB.groovy')
-          external('projectC.groovy')
           removeAction('DISABLE')
           ignoreExisting()
           additionalClasspath('lib')
