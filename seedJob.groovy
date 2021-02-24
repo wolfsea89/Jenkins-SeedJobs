@@ -73,7 +73,6 @@ listView('Build') {
   //   }
   // }
   jobs {
-    name("")
     regex('^Build-.*?$')
   }
   columns {
