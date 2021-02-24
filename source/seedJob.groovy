@@ -12,7 +12,10 @@ job('seedJob'){
   }
   steps {
     jobDsl {
-      targets('seedJob.groovy')
+      targets("""
+      source/seedJob.groovy
+      source/view/dockerBuilder.groovy
+      """)
     }
   }
 }
