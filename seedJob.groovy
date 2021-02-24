@@ -1,5 +1,6 @@
 job('seedJob'){
-  displayName('Create jobs')
+  displayName('seedJob')
+  description('Create jobs')
   scm {
     git {
       remote {
