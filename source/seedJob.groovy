@@ -1,6 +1,7 @@
 def seedJobs = [
   'source/seedJob.groovy',
   'source/view/dockerBuilder.groovy',
+  'source/view/technicalJobs.groovy',
   'source/buildDefinitions/buildDocker.groovy'
 ]
 
