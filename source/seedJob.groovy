@@ -14,8 +14,8 @@ for (item in seedJobs){
   }
 }
 
-job('seedJob'){
-  displayName('seedJob')
+job('SeedJob'){
+  displayName('SeedJob')
   description('Create jobs')
   scm {
     git {

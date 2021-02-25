@@ -1,6 +1,6 @@
 listView('Tech') {
   jobs {
-    name('seedJob')
+    name('SeedJob')
     regex('^Tech-.*?$')
   }
   columns {
