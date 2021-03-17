@@ -19,7 +19,7 @@ for (jobItem in jobsList){
           "repositoryUrl": "https://index.docker.io/v1/"
         },
         "GitHubRelease": {
-          "repositoryName": "docker.pkg.github.com/wolfsea89/jenkins-baseimage/${jobItem.docker.name}",
+          "repositoryName": "docker.pkg.github.com/wolfsea89/${jobItem.docker.githubRepositoryName}/${jobItem.docker.name}",
           "repositoryCredentialID": "github",
           "repositoryUrl": "https://docker.pkg.github.com/"
         }
