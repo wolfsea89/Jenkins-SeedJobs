@@ -1,4 +1,4 @@
-listView('Build Docker') {
+listView('Build Dotnet Core') {
   jobs {
     regex('^Build-DotNetCore-.*?$')
   }
