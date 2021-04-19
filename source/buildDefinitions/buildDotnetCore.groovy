@@ -5,7 +5,7 @@ String jobsDefinition = 'configuration/jobs.json'
 def jobsList = new JsonSlurper().parseText(readFileFromWorkspace(jobsDefinition))
 
 for (jobItem in jobsList){
-  if(jobItem.jobType == "Build-Docker"){
+  if(jobItem.jobType == "Build-Dotnet-Core"){
       def publishJson = new JsonSlurper().parseText("""
         {
           "DockerHubRelease": {
@@ -59,7 +59,7 @@ for (jobItem in jobsList){
                 }
               }
             }
-            scriptPath('Docker.Jenkinsfile')
+            scriptPath('DotnetCore.Jenkinsfile')
           }
         }
       }

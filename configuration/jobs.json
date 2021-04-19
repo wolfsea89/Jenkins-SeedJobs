@@ -1,7 +1,7 @@
 [
   {
     "name": "Build-Docker-Jenkins-BaseImage",
-    "jobType": "BuildDocker",
+    "jobType": "Build-Docker",
     "defaultBranch": "develop",
     "repositoryUrl": "git@github.com:wolfsea89/Jenkins-Docker-BaseImage.git",
     "docker": {
@@ -11,12 +11,22 @@
   },
   {
     "name": "Build-Docker-PXE-BaseImage",
-    "jobType": "BuildDocker",
+    "jobType": "Build-Docker",
     "defaultBranch": "develop",
     "repositoryUrl": "git@github.com:wolfsea89/Pxe-Docker-BaseImage.git",
     "docker": {
       "name": "pxe-server",
       "githubRepositoryName": "pxe-docker-baseimage"
+    }
+  },
+  {
+    "name": "Build-DotNetCore-eShopOnWeb",
+    "jobType": "Build-Dotnet-Core",
+    "defaultBranch": "develop",
+    "repositoryUrl": "git@github.com:wolfsea89/eShopOnWeb.git",
+    "docker": {
+      "name": "eShopOnWeb",
+      "githubRepositoryName": "eShopOnWeb-docker-baseimage"
     }
   }
 ]
