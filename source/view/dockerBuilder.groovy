@@ -1,6 +1,6 @@
 listView('Build Docker') {
   jobs {
-    regex('^Build-.*?$')
+    regex('^Build-Docker-.*?$')
   }
   columns {
     status()
