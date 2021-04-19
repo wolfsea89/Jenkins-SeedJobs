@@ -6,25 +6,26 @@ def jobsList = new JsonSlurper().parseText(readFileFromWorkspace(jobsDefinition)
 
 for (jobItem in jobsList){
   if(jobItem.jobType == "BuildDocker"){
-        def publishJson = new JsonSlurper().parseText("""
-      {
-        "DockerHubRelease": {
-          "repositoryName": "wolfsea89/${jobItem.docker.name}",
-          "repositoryCredentialID": "docker_hub",
-          "repositoryUrl": "https://index.docker.io/v1/"
-        },
-        "DockerHubSnapshot": {
-          "repositoryName": "wolfsea89/${jobItem.docker.name}-snapshot",
-          "repositoryCredentialID": "docker_hub",
-          "repositoryUrl": "https://index.docker.io/v1/"
-        },
-        "GitHubRelease": {
-          "repositoryName": "docker.pkg.github.com/wolfsea89/${jobItem.docker.githubRepositoryName}/${jobItem.docker.name}",
-          "repositoryCredentialID": "github",
-          "repositoryUrl": "https://docker.pkg.github.com/"
+      def publishJson = new JsonSlurper().parseText("""
+        {
+          "DockerHubRelease": {
+            "repositoryName": "wolfsea89/${jobItem.docker.name}",
+            "repositoryCredentialID": "docker_hub",
+            "repositoryUrl": "https://index.docker.io/v1/"
+          },
+          "DockerHubSnapshot": {
+            "repositoryName": "wolfsea89/${jobItem.docker.name}-snapshot",
+            "repositoryCredentialID": "docker_hub",
+            "repositoryUrl": "https://index.docker.io/v1/"
+          },
+          "GitHubRelease": {
+            "repositoryName": "docker.pkg.github.com/wolfsea89/${jobItem.docker.githubRepositoryName}/${jobItem.docker.name}",
+            "repositoryCredentialID": "github",
+            "repositoryUrl": "https://docker.pkg.github.com/"
+          }
         }
-      }
-      """)
+        """
+      )
 
     pipelineJob(jobItem.name) {
       parameters{

@@ -1,16 +1,16 @@
 [
   {
-    "name": "Build-Jenkins-BaseImage",
+    "name": "Build-Docker-Jenkins-BaseImage",
     "jobType": "BuildDocker",
     "defaultBranch": "develop",
-    "repositoryUrl": "git@github.com:wolfsea89/Jenkins-Doker-BaseImage.git",
+    "repositoryUrl": "git@github.com:wolfsea89/Jenkins-Docker-BaseImage.git",
     "docker": {
       "name": "jenkins-master",
       "githubRepositoryName": "jenkins-docker-baseimage"
     }
   },
   {
-    "name": "Build-PXE-BaseImage",
+    "name": "Build-Docker-PXE-BaseImage",
     "jobType": "BuildDocker",
     "defaultBranch": "develop",
     "repositoryUrl": "git@github.com:wolfsea89/Pxe-Docker-BaseImage.git",
