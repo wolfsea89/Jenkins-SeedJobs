@@ -3,6 +3,7 @@ def seedJobs = [
   'source/buildDefinitions/buildDocker.groovy',
   'source/buildDefinitions/buildDotnetCore.groovy',
   'source/view/dockerBuilder.groovy',
+  'source/view/DotnetCoreBuilder.groovy',
   'source/view/technicalJobs.groovy'
 ]
 
