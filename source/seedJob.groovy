@@ -18,13 +18,16 @@ for (item in seedJobs){
 job('SeedJob'){
   displayName('SeedJob')
   description('Create jobs')
+    parameters{
+        stringParam("branchName", "master", 'Branch name')
+      }
   scm {
     git {
       remote {
         url('git@github.com:wolfsea89/Jenkins-SeedJobs.git')
         credentials('github')
       }
-      branch('master')
+      branch('$branchName')
     }
   }
   steps {
