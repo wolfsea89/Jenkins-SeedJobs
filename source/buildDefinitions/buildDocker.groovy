@@ -59,7 +59,7 @@ for (jobItem in jobsList){
                 }
               }
             }
-            scriptPath('Jenkinsfile')
+            scriptPath('Docker.Jenkinsfile')
           }
         }
       }
